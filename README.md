@@ -1,4 +1,4 @@
-# Hanzi Grabber
+# Hanzi Grabber | 汉字抓取器
 This is a Chrome extension to get and copy all Hanzi on a website.
 
 The motivation to make this extension was to more easily create Anki Decks and check my comprehension on spesific sites.
