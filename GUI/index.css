@@ -1,0 +1,35 @@
+body {
+    font-family:'minecraft';
+    text-align:center;
+    width:200px;
+}
+
+button {
+    width:100%;
+    font-family:'minecraft';
+    font-size: 20px;
+    color:white;
+    background:linear-gradient(#bc01e1, #c45ba8);
+    border-width:0px;
+    border-radius:20px;
+    padding:5px;
+    font-weight: bold;
+    cursor:pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(188, 1, 225, 0.3);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(188, 1, 225, 0.5);
+    background: linear-gradient(#d91bff, #e874d1);
+}
+
+#resultbox {
+  font-size: 20px;
+}
+
+#imgpreface {
+  width: 50%;
+  height: 50%;
+}

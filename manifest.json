@@ -1,0 +1,24 @@
+{
+  "name": "Hanzi Grabber",
+  "description": "Extension to grab all Hanzi on a page.",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "GUI/index.html"
+  },
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "clipboardWrite"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
