@@ -27,3 +27,4 @@ More Export Functions.
 Check Comprehension on page.
 
 ### Made by alanoo <3
+Project page: https://alanoo.dev/projects/#hanzi-helper
