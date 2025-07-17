@@ -1,15 +1,47 @@
 body {
     font-family:'minecraft';
     text-align:center;
-    width:200px;
+    width:250px;
+    height:550px;
+    background:linear-gradient(#001125, #006b91, #001125);
+}
+
+html {
+    border: 3px solid #001125;
+}
+
+h1 {
+    font-size:20px;
+    background: linear-gradient(#d97100, #ffca04);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+h2 {
+    font-size:17px;
+    background: linear-gradient(#d9ae00, #ffca04);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+h3 {
+    font-size:14px;
+    background: linear-gradient(#d9ae00, #ffca04);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
 }
 
 button {
-    width:100%;
+    width:70%;
+    height:7%;
     font-family:'minecraft';
-    font-size: 20px;
+    font-size: 18px;
     color:white;
-    background:linear-gradient(#bc01e1, #c45ba8);
+    background: linear-gradient(#d97100, #ffca04);
     border-width:0px;
     border-radius:20px;
     padding:5px;
@@ -21,15 +53,53 @@ button {
 
 button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(188, 1, 225, 0.5);
-    background: linear-gradient(#d91bff, #e874d1);
+    box-shadow: 0 8px 25px #d970008b;
+    background: linear-gradient(#d99c00, #ffca04);
 }
 
 #resultbox {
-  font-size: 20px;
+  font-size: 16px !important;
+  color: white;
 }
 
 #imgpreface {
   width: 50%;
-  height: 50%;
+  height: auto;
+}
+
+#converter {
+  border: 1px solid #006b91;
+  border-radius: 15px;
+  padding: 15px;
+  margin: 15px 0;
+  background: rgba(0, 17, 37, 0.8);
+  box-shadow: inset 0 0 10px rgba(0, 107, 145, 0.2);
+}
+
+#converter button {
+  width: 100%;
+  margin: 5px 0;
+  padding: 12px;
+  font-size: 11px;
+  background: #006b91;
+  border: 1px solid #006b91;
+  color: white;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+#converter button:hover {
+  background: #015f82;
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 107, 145, 0.4);
+}
+
+#converter button.active {
+  background: linear-gradient(145deg, #006b91, #00a3d9);
+  color: white;
+  box-shadow: 0 3px 10px rgba(0, 107, 145, 0.6);
+  transform: translateY(0px);
 }

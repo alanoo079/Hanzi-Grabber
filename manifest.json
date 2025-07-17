@@ -1,7 +1,7 @@
 {
   "name": "Hanzi Grabber",
   "description": "Extension to grab all Hanzi on a page.",
-  "version": "1.0",
+  "version": "1.1",
   "manifest_version": 3,
   "action": {
     "default_popup": "GUI/index.html"
@@ -9,7 +9,8 @@
   "permissions": [
     "activeTab",
     "scripting",
-    "clipboardWrite"
+    "clipboardWrite",
+    "storage"
   ],
   "host_permissions": [
     "http://*/*",

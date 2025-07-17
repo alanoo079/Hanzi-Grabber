@@ -3,12 +3,24 @@
     <head>
         <title>Hanzi Grabber</title>
         <link rel="stylesheet" type="text/css" href="index.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8"/>
     </head>
     <body>
         <img src="icon128.png" id="imgpreface"></img>
         <h1>Hanzi Grabber</h1>
         <button id="grabbutton">Grab Hanzi</button>
         <p id="resultbox"></p>
+        <div id="settings">
+            <h2>Settings</h2>
+            <div id="converter">
+                <h3>Converter</h3>
+                <button id="all">All 🇨🇳 & 🇹🇼</button>
+                <button id="simplified">Simplified 🇨🇳</button>
+                <button id="traditional">Traditional 🇹🇼</button>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/opencc-js@1.0.5/dist/umd/full.js"></script>
         <script src="script.js"></script>
     </body>
 </html>
