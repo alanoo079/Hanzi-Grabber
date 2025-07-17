@@ -1,8 +1,9 @@
 {
-  "name": "Hanzi Grabber",
-  "description": "Extension to grab all Hanzi on a page.",
-  "version": "1.1",
+  "name": "Hanzi Helper",
+  "description": "A little Chrome extension that collects, converts, and helps you learn Chinese characters on any webpage for a easier Hanzi learning experience! <3",
+  "version": "1.2",
   "manifest_version": 3,
+  "homepage_url": "https://github.com/alanoo079/Hanzi-Grabber",
   "action": {
     "default_popup": "GUI/index.html"
   },
@@ -20,6 +21,7 @@
     "16": "icons/icon16.png",
     "32": "icons/icon32.png",
     "48": "icons/icon48.png",
-    "128": "icons/icon128.png"
+    "128": "icons/icon128.png",
+    "512": "icons/hanzi.png"
   }
 }

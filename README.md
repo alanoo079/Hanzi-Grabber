@@ -1,16 +1,20 @@
-# Hanzi Grabber | 汉字抓取器
-This is a Chrome extension to get and copy all Hanzi on a website.
+# 🀄️ Hanzi Helper | 汉字助手 ❤️
+A little Chrome extension that collects, converts, and helps you learn Chinese characters on any webpage for a easier Hanzi learning experience! <3
 
 The motivation to make this extension was to more easily create Anki Decks and check my comprehension on spesific sites.
 
-![alt text](/image.png "hanzi-grabber")
+![alt text](/icons/hanzi.png "hanzi")
 
 ## Features
 Grab all Hanzi on a page
 
 Removes duplicates.
 
-Convert to Traditional/Simplified
+Convert to Traditional/Simplified.
+
+Switch the site's hanzi to Traditional/Simplified.
+
+![alt text](/image.png "hanzi-grabber")
 
 ## Developer mode
 If you would like to modify this extension, you will need to install it manually. Clone, download or fork this repository. In Chrome Extensions page `chrome://extensions/`. Developer mode must be enabled, then click the button **Load unpacked extension**.

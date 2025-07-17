@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Hanzi Grabber</title>
+        <title>Hanzi Helper</title>
         <link rel="stylesheet" type="text/css" href="index.css"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="utf-8"/>
     </head>
     <body>
-        <img src="icon128.png" id="imgpreface"></img>
-        <h1>Hanzi Grabber</h1>
+        <!-- <img src="icon128.png" id="imgpreface"></img> -->
+        <h1>Hanzi Helper</h1>
         <button id="grabbutton">Grab Hanzi</button>
         <p id="resultbox"></p>
         <div id="settings">
@@ -19,8 +19,21 @@
                 <button id="simplified">Simplified 🇨🇳</button>
                 <button id="traditional">Traditional 🇹🇼</button>
             </div>
+            <div id="actions">
+                <h3>Actions</h3>
+                <div class="button-row">
+                    <button id="changeform">Switch Hanzi</button> <!-- Changes All Hanzi on page to the current converter setting. -->
+                    <!-- <button id="buttonrn2">Switch Hanzi</button> -->
+                </div>
+                <hr>
+                <div class="button-row">
+                <!-- to be continued... lmao-->
+                </div>
+            </div>
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/opencc-js@1.0.5/dist/umd/full.js"></script>
+        <p style="font-size: 13px; color: #f7ca03; margin-top: 15px; text-align: center;">
+            Feel free to support me on <a href="https://github.com/alanoo079/Hanzi-Helper" target="_blank" style="color: #d99400; text-decoration: none;">GitHub!</a><br>- alanoo ❤️
+        </p>
         <script src="script.js"></script>
     </body>
 </html>

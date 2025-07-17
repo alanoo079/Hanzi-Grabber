@@ -5,6 +5,8 @@ let simplified_button = document.getElementById("simplified");
 let traditional_button = document.getElementById("traditional");
 let all_button = document.getElementById("all");
 
+let switchhanzi = document.getElementById("changeform");
+
 let id;
 let tab;
 
@@ -131,4 +133,121 @@ traditional_button.addEventListener("click", function(){
 
 all_button.addEventListener("click", function(){
     changesettingconverter("all");
+});
+
+switchhanzi.addEventListener("click", function(){
+    chrome.tabs.query({active: true}, (tabs) => {
+        tab = tabs[0];
+        id = tab.id
+        gettext(id, async (text) => {
+            if (text === '') {
+                resultmsg.innerHTML = "No hanzi found on page to switch :(";
+                resultmsg.style.color = "red";
+            } else {
+                getsettingconverter(async (setting) => {
+                    if (setting === "simplified") {
+                        resultmsg.innerHTML = "Switching to Simplified...";
+
+                        const converted = await scrapepurplehanzi(text, 'tcsc');
+                        
+                        const originalChars = text.replace(/ /g, '').split('');
+                        const convertedChars = converted.replace(/ /g, '').split('');
+                        const charMap = {};
+                        
+                        for (let i = 0; i < originalChars.length; i++) {
+                            if (originalChars[i] !== convertedChars[i]) {
+                                charMap[originalChars[i]] = convertedChars[i];
+                            }
+                        }
+                        
+                        chrome.scripting.executeScript({
+                            target: { tabId: id },
+                            func: (characterMap) => {
+                                function replaceTextInNode(node) {
+                                    if (node.nodeType === Node.TEXT_NODE) {
+                                        let text = node.textContent;
+                                        let hasChanges = false;
+                                        
+                                        for (let original in characterMap) {
+                                            if (text.includes(original)) {
+                                                text = text.replace(new RegExp(original, 'g'), characterMap[original]);
+                                                hasChanges = true;
+                                            }
+                                        }
+                                        
+                                        if (hasChanges) {
+                                            node.textContent = text;
+                                        }
+                                    } else {
+                                        for (let child of node.childNodes) {
+                                            replaceTextInNode(child);
+                                        }
+                                    }
+                                }
+                                
+                                replaceTextInNode(document.body);
+                            },
+                            args: [charMap]
+                        });
+                        const unique = [...new Set(converted.split(''))].join(' ');
+                        let hanziCount = unique.split(' ').length;
+                        resultmsg.innerHTML = `Switched the site's ${hanziCount} hanzi to simplified hanzi :D`;
+                        resultmsg.style.color = "#0fd066";
+                    } else if (setting === "traditional") {
+                        resultmsg.innerHTML = "Switching to Traditional...";
+
+                        const converted = await scrapepurplehanzi(text, 'sctc');
+                        
+                        const originalChars = text.replace(/ /g, '').split('');
+                        const convertedChars = converted.replace(/ /g, '').split('');
+                        const charMap = {};
+                        
+                        for (let i = 0; i < originalChars.length; i++) {
+                            if (originalChars[i] !== convertedChars[i]) {
+                                charMap[originalChars[i]] = convertedChars[i];
+                            }
+                        }
+                        // thank you kind soul who i definitly didnt steal the text replace script from ;D
+                        chrome.scripting.executeScript({
+                            target: { tabId: id },
+                            func: (characterMap) => {
+                                function replaceTextInNode(node) {
+                                    if (node.nodeType === Node.TEXT_NODE) {
+                                        let text = node.textContent;
+                                        let hasChanges = false;
+                                        
+                                        for (let original in characterMap) {
+                                            if (text.includes(original)) {
+                                                text = text.replace(new RegExp(original, 'g'), characterMap[original]);
+                                                hasChanges = true;
+                                            }
+                                        }
+                                        
+                                        if (hasChanges) {
+                                            node.textContent = text;
+                                        }
+                                    } else {
+                                        for (let child of node.childNodes) {
+                                            replaceTextInNode(child);
+                                        }
+                                    }
+                                }
+                                
+                                replaceTextInNode(document.body);
+                            },
+                            args: [charMap]
+                        });
+                        const unique = [...new Set(converted.split(''))].join(' ');
+                        let hanziCount = unique.split(' ').length;
+                        resultmsg.innerHTML = `Switched the site's ${hanziCount} hanzi to traditional hanzi :D`;
+                        resultmsg.style.color = "#0fd066";
+                    } else {
+                        resultmsg.innerHTML = `Please pick an option :D`;
+                        resultmsg.style.color = "#ffffffff";
+                    }
+                });
+            }
+        });
+    });
+
 });
